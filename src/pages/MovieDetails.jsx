@@ -19,7 +19,7 @@ const MovieDetails = () => {
                 title: results.original_title,
                 src: results.poster_path,
                 year: results.release_date.slice(0, 4),
-                score: results.vote_average,
+                score: Math.round(results.vote_average *10),
                 genres: results.genres.map(genre=>genre.name).join(', '),
                 overview: results.overview,
             }
@@ -40,7 +40,7 @@ const MovieDetails = () => {
                             <Title>
                                 {movie.title} ({movie.year})
                             </Title>
-                            <p>User score: {movie.score}</p>
+                            <p>User score: {movie.score}%</p>
                         </div>
                         <Overview>
                             <SecondaryTitle>Overview:</SecondaryTitle>

@@ -10,7 +10,7 @@ return (
 }; 
 
 BackLink.propTypes = {
-  to: PropTypes.object,
+  to: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   children: PropTypes.node,
 };
 
