@@ -13,11 +13,10 @@ export const List = styled.ol`
   flex-direction: column;
   gap: 8px;
   list-style: inside;
-  list-style-type: decimal;
 `
 
 export const ListItem = styled.li`
-  max-width: 400px;
+  max-width: 1100px;
 `
 
 export const Link = styled(NavLink)`

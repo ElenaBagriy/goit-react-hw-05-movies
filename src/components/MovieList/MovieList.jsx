@@ -1,8 +1,9 @@
 import { useLocation } from "react-router-dom";
 import PropTypes from 'prop-types';
 import { Container, List, ListItem, Link } from "./MovieList.styled";
+import { PaginatedItems } from '../Pagination/Pagination';
 
-const MovieList = ({movies, header}) => {
+const MovieList = ({movies, header, totalPages, changePage}) => {
   const location = useLocation();
 
   return (
@@ -16,7 +17,13 @@ const MovieList = ({movies, header}) => {
                 </Link>
             </ListItem>
             ))}
-          </List>
+      </List>
+      {totalPages > 1 && <Container>
+        <PaginatedItems
+          onPageChange={changePage}
+          pageCount={totalPages} />
+      </Container>}
+      
       </Container>
   );
 };
@@ -27,6 +34,8 @@ MovieList.propTypes = {
     title: PropTypes.string.isRequired,
   })),
   header: PropTypes.string,
+  totalPages: PropTypes.number,
+  changePage: PropTypes.func,
 };
 
 export default MovieList;
