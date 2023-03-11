@@ -58,10 +58,10 @@ const MovieDetails = () => {
                     <Title>Additional information</Title>
                     <List>
                         <ListItem>
-                            <Link to="cast" state={{from: location}}>Cast</Link>
+                            <Link to="cast" state={{from: location?.state?.from ?? '/'}}>Cast</Link>
                         </ListItem>
                         <ListItem>
-                            <Link to="reviews" state={{from: location}}>Reviews</Link>
+                            <Link to="reviews" state={{from: location?.state?.from ?? '/'}}>Reviews</Link>
                         </ListItem>
                     </List>
                     <Suspense fallback={<Sceleton/>}>
