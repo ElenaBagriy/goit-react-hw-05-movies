@@ -35,7 +35,7 @@ useEffect(() => {
   return (
     <main>
       <SearchBox onSubmit={onSubmit} />
-      {movies.length !== 0 && <MovieList movies={movies} />}
+      {movies.length !== 0 && <MovieList movies={movies} header={`Movies containing the query "${searchParams.get('query')}"`} />}
     </main>
   );
 };
